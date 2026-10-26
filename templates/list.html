@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>문의 목록</title>
+</head>
+<body>
+    <h1>문의 목록</h1>
+    <p><a href="/">문의 입력</a> | <a href="/admin">데이터 초기화</a></p>
+    <form method="get" action="/inquiries">
+        <label for="status">환불상태</label>
+        <select id="status" name="status">
+            <option value="전체" {% if status == "전체" %}selected{% endif %}>전체</option>
+            <option value="없음" {% if status == "없음" %}selected{% endif %}>없음</option>
+            <option value="환불완료" {% if status == "환불완료" %}selected{% endif %}>환불완료</option>
+        </select>
+        <button type="submit">필터</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>고객명</th>
+                <th>주문번호</th>
+                <th>문의내용</th>
+                <th>답변</th>
+                <th>환불상태</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in inquiries %}
+            <tr>
+                <td>{{ item["customer_name"] }}</td>
+                <td>{{ item["order_number"] }}</td>
+                <td>{{ item["inquiry"] }}</td>
+                <td>{{ item["reply"] }}</td>
+                <td>{{ item["refund_status"] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>데이터 초기화</title>
+</head>
+<body>
+    <h1>데이터 초기화</h1>
+    <p><a href="/">문의 입력</a> | <a href="/inquiries">문의 목록</a></p>
+    <form method="post" action="/admin">
+        <label for="password">관리자 비밀번호</label>
+        <input id="password" name="password" type="password" required>
+        <button type="submit">초기화</button>
+    </form>
+    {% if message is not none %}
+    <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>

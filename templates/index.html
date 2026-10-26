@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>고객 문의 답변 도우미</title>
+</head>
+<body>
+    <h1>고객 문의 답변 도우미</h1>
+    <p><a href="/inquiries">문의 목록</a> | <a href="/admin">데이터 초기화</a></p>
+    <form method="post" action="/">
+        <p>
+            <label for="customer_name">고객명</label>
+            <input id="customer_name" name="customer_name" required>
+        </p>
+        <p>
+            <label for="order_number">주문번호</label>
+            <input id="order_number" name="order_number" placeholder="ORD-1001">
+        </p>
+        <p>
+            <label for="inquiry">문의 내용</label>
+            <textarea id="inquiry" name="inquiry" maxlength="2000" required></textarea>
+        </p>
+        <button type="submit">문의 처리</button>
+    </form>
+    {% if result is not none %}
+    <h2>결과</h2>
+    <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>
