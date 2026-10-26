@@ -10,6 +10,6 @@ set GITHUB_TOKEN=발급받은토큰
 uvicorn main:app
 ```
 
-배포 링크: (추후 기입)
+배포 링크: (https://inquiry-helper-isp829.azurewebsites.net)
 
 샘플 주문번호: `ORD-1001` ~ `ORD-1020`
