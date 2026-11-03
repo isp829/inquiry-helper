@@ -105,3 +105,8 @@ POST `/` 입력값:
 `.env`와 `copilot-prompt.md`는 `.gitignore`와 `.dockerignore`로 저장소와 이미지에서 제외한다.
 
 ## 8. 배포
+
+- `az webapp up`으로 저장소 코드를 Azure App Service(Linux, B1)에 배포한다.
+- App Service 앱 설정에 `GITHUB_TOKEN`을 넣는다.
+- 배포 링크: https://inquiry-helper-isp829.azurewebsites.net
+- 저장소의 `Dockerfile`은 컨테이너로 실행할 때 쓰는 구성이다. Node.js 22, Copilot CLI(`@github/copilot`), 파이썬 패키지를 설치하고 8000번 포트에서 gunicorn으로 실행한다.
